@@ -6,6 +6,7 @@ spoon.SpoonInstall:andUse("AppLauncher", {
 		g = "ChatGPT",
 		k = "Slack",
 		l = "Linear",
+		n = "Obsidian",
 		o = "Outlook",
 		t = "WezTerm",
 		x = "Google Chrome",
