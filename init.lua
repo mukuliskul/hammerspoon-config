@@ -8,6 +8,7 @@ spoon.SpoonInstall:andUse("AppLauncher", {
 		l = "Linear",
 		n = "Obsidian",
 		o = "Outlook",
+		s = "Spotify",
 		t = "WezTerm",
 		x = "Google Chrome",
 	},
