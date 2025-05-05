@@ -3,6 +3,7 @@ hs.loadSpoon("SpoonInstall")
 -- Install AppLauncher
 spoon.SpoonInstall:andUse("AppLauncher", {
 	hotkeys = {
+		d = "Docker Desktop",
 		g = "ChatGPT",
 		k = "Slack",
 		l = "Linear",
