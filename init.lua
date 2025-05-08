@@ -3,12 +3,14 @@ hs.loadSpoon("SpoonInstall")
 -- Install AppLauncher
 spoon.SpoonInstall:andUse("AppLauncher", {
 	hotkeys = {
+		b = "Beekeeper Studio",
 		d = "Docker Desktop",
 		g = "ChatGPT",
 		k = "Slack",
 		l = "Linear",
 		n = "Obsidian",
 		o = "Outlook",
+		p = "Postman",
 		s = "Spotify",
 		t = "WezTerm",
 		x = "Google Chrome",
