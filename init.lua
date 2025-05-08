@@ -44,8 +44,11 @@ spoon.SpoonInstall:andUse("WindowHalfsAndThirds", {
 -- Install ClipboardTool
 spoon.SpoonInstall:andUse("ClipboardTool", {
 	start = true,
+	config = {
+		show_copied_alert = false,
+		paste_on_select = true,
+	},
 	hotkeys = {
-		toggle_clipboard = { { "ctrl", "alt" }, "v" },
-		show_clipboard = { { "ctrl", "alt" }, "c" },
+		toggle_clipboard = { { "ctrl", "alt" }, "c" },
 	},
 })
