@@ -13,6 +13,7 @@ spoon.SpoonInstall:andUse("AppLauncher", {
 		p = "Postman",
 		s = "Spotify",
 		t = "WezTerm",
+		w = "Whatsapp",
 		x = "Google Chrome",
 	},
 })
