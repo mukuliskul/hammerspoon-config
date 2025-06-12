@@ -53,3 +53,15 @@ spoon.SpoonInstall:andUse("ClipboardTool", {
 		toggle_clipboard = { { "ctrl", "alt" }, "c" },
 	},
 })
+
+-- Install ArrangeDesktop
+spoon.SpoonInstall:andUse("ArrangeDesktop", {
+	fn = function(spoon)
+		spoon.arrangements = spoon:_loadConfiguration()
+		if spoon.arrangements["office"] then
+			spoon:arrange("office")
+		else
+			print("Arrangement 'office' not found.")
+		end
+	end,
+})
