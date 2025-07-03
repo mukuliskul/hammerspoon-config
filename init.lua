@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 hs.loadSpoon("SpoonInstall")
 
 -- Install AppLauncher
