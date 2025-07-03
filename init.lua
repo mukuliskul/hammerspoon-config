@@ -68,6 +68,7 @@ spoon.SpoonInstall:andUse("ArrangeDesktop", {
 
 -- 💡 Add hotkeys to switch layouts AFTER ArrangeDesktop is initialized
 hs.hotkey.bind({ "ctrl", "alt" }, "1", function()
+	hs.execute('automator "/Users/mukul/Desktop/workflow.app"')
 	if spoon.ArrangeDesktop and spoon.ArrangeDesktop.arrangements and spoon.ArrangeDesktop.arrangements["office"] then
 		spoon.ArrangeDesktop:arrange("office")
 		hs.alert.show("Applied layout: office")
@@ -77,10 +78,15 @@ hs.hotkey.bind({ "ctrl", "alt" }, "1", function()
 end)
 
 hs.hotkey.bind({ "ctrl", "alt" }, "2", function()
-	if spoon.ArrangeDesktop and spoon.ArrangeDesktop.arrangements and spoon.ArrangeDesktop.arrangements["home"] then
-		spoon.ArrangeDesktop:arrange("home")
-		hs.alert.show("Applied layout: home")
+	hs.execute('automator "/Users/mukul/Desktop/workflow.app"')
+	if
+		spoon.ArrangeDesktop
+		and spoon.ArrangeDesktop.arrangements
+		and spoon.ArrangeDesktop.arrangements["home-work"]
+	then
+		spoon.ArrangeDesktop:arrange("home-work")
+		hs.alert.show("Applied layout: home-work")
 	else
-		hs.alert.show("Arrangement 'home' not found")
+		hs.alert.show("Arrangement 'home-work' not found")
 	end
 end)
