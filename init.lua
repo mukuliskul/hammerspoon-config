@@ -57,11 +57,28 @@ spoon.SpoonInstall:andUse("ClipboardTool", {
 -- Install ArrangeDesktop
 spoon.SpoonInstall:andUse("ArrangeDesktop", {
 	fn = function(spoon)
+		-- Create a new arrangement
+		-- local arrangement_name = "office"
+		-- spoon:createArrangement(arrangement_name)
 		spoon.arrangements = spoon:_loadConfiguration()
-		if spoon.arrangements["office"] then
-			spoon:arrange("office")
-		else
-			print("Arrangement 'office' not found.")
-		end
 	end,
 })
+
+-- 💡 Add hotkeys to switch layouts AFTER ArrangeDesktop is initialized
+hs.hotkey.bind({ "ctrl", "alt" }, "1", function()
+	if spoon.ArrangeDesktop and spoon.ArrangeDesktop.arrangements and spoon.ArrangeDesktop.arrangements["office"] then
+		spoon.ArrangeDesktop:arrange("office")
+		hs.alert.show("Applied layout: office")
+	else
+		hs.alert.show("Arrangement 'office' not found")
+	end
+end)
+
+hs.hotkey.bind({ "ctrl", "alt" }, "2", function()
+	if spoon.ArrangeDesktop and spoon.ArrangeDesktop.arrangements and spoon.ArrangeDesktop.arrangements["home"] then
+		spoon.ArrangeDesktop:arrange("home")
+		hs.alert.show("Applied layout: home")
+	else
+		hs.alert.show("Arrangement 'home' not found")
+	end
+end)

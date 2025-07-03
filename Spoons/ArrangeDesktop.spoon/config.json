@@ -2,79 +2,84 @@
   "office" : {
     "1CB0CC58-284D-4FA9-9650-31233FF8EDB3" : {
       "apps" : {
-        "Google Chrome" : {
-          "y" : 25,
+        "Bruno" : {
+          "y" : -298,
           "w" : 2048,
-          "x" : 2047,
-          "h" : 1127
+          "x" : -2048,
+          "h" : 1072
         },
-        "Docker Desktop" : {
-          "y" : 25,
-          "w" : 1024,
-          "x" : 3072,
-          "h" : 1127
-        },
-        "ChatGPT" : {
-          "y" : 25,
-          "w" : 1024,
-          "x" : 2048,
-          "h" : 1127
-        },
-        "Microsoft Outlook" : {
-          "y" : 25,
-          "w" : 1024,
-          "x" : 3072,
-          "h" : 1127
-        },
-        "Linear" : {
-          "y" : 0,
+        "WezTerm" : {
+          "y" : -298,
           "w" : 2048,
-          "x" : 2048,
-          "h" : 1152
-        },
-        "Slack" : {
-          "y" : 25,
-          "w" : 1024,
-          "x" : 2048,
+          "x" : -2048,
           "h" : 1127
         }
       },
-      "Monitor Name" : "secondary"
+      "Monitor Name" : "Primary"
     },
     "5BDC5651-C3B3-4728-8B74-460869182117" : {
       "apps" : {
-        "Spotify" : {
-          "y" : 0,
+        "Docker Desktop" : {
+          "y" : -298,
           "w" : 2048,
-          "x" : 0,
-          "h" : 1152
+          "x" : -4096,
+          "h" : 1127
         },
-        "Beekeeper Studio" : {
-          "y" : 25,
-          "w" : 2048,
-          "x" : 0,
-          "h" : 1072
+        "Microsoft Outlook" : {
+          "y" : -298,
+          "w" : 1024,
+          "x" : -4096,
+          "h" : 1127
         },
         "Obsidian" : {
-          "y" : 25,
+          "y" : -298,
           "w" : 2048,
-          "x" : 0,
-          "h" : 1072
-        },
-        "Postman" : {
-          "y" : 25,
-          "w" : 2048,
-          "x" : 0,
-          "h" : 1073
-        },
-        "WezTerm" : {
-          "y" : 25,
-          "w" : 2048,
-          "x" : -0,
+          "x" : -4096,
           "h" : 1127
+        },
+        "Beekeeper Studio" : {
+          "y" : -323,
+          "w" : 2048,
+          "x" : -4096,
+          "h" : 1152
+        },
+        "Slack" : {
+          "y" : -298,
+          "w" : 1024,
+          "x" : -3072,
+          "h" : 1127
+        },
+        "Google Chrome" : {
+          "y" : -298,
+          "w" : 2048,
+          "x" : -4096,
+          "h" : 1127
+        },
+      },
+      "Monitor Name" : "SecondaryLeft"
+    },
+    "37D8832A-2D66-02CA-B9F7-8F30A301B230" : {
+      "apps" : {
+        "ChatGPT" : {
+          "y" : 28,
+          "w" : 1168,
+          "x" : 0,
+          "h" : 672
+        },
+        "Spotify" : {
+          "y" : 28,
+          "w" : 1168,
+          "x" : 0,
+          "h" : 672
+        },
+        "Linear" : {
+          "y" : 28,
+          "w" : 1168,
+          "x" : 0,
+          "h" : 672
         }
       },
-      "Monitor Name" : "primary"
+      "Monitor Name" : "SecondaryRight"
     }
   }
 }
