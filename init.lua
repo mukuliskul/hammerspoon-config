@@ -11,6 +11,7 @@ spoon.SpoonInstall:andUse("AppLauncher", {
 		k = "Slack",
 		l = "Linear",
 		n = "Obsidian",
+		m = "Notion",
 		o = "Microsoft Outlook",
 		p = "Bruno",
 		s = "Spotify",
