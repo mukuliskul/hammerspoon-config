@@ -8,7 +8,9 @@ spoon.SpoonInstall:andUse("AppLauncher", {
 		a = "Anki",
 		b = "Beekeeper Studio",
 		d = "Docker Desktop",
+		e = "Self-Service",
 		g = "ChatGPT",
+		h = "Whatsapp",
 		k = "Slack",
 		l = "Linear",
 		n = "Obsidian",
@@ -16,8 +18,8 @@ spoon.SpoonInstall:andUse("AppLauncher", {
 		o = "Microsoft Outlook",
 		p = "Bruno",
 		s = "Spotify",
-		t = "WezTerm",
-		w = "Whatsapp",
+		t = "Microsoft Teams",
+		w = "WezTerm",
 		x = "Google Chrome",
 	},
 })
@@ -70,7 +72,7 @@ spoon.SpoonInstall:andUse("ArrangeDesktop", {
 
 -- 💡 Add hotkeys to switch layouts AFTER ArrangeDesktop is initialized
 hs.hotkey.bind({ "ctrl", "alt" }, "1", function()
-	hs.execute('automator "/Users/mukul/Desktop/workflow.app"')
+	hs.execute('automator "/Users/sharmamu/Desktop/workflow.app"')
 	if spoon.ArrangeDesktop and spoon.ArrangeDesktop.arrangements and spoon.ArrangeDesktop.arrangements["office"] then
 		spoon.ArrangeDesktop:arrange("office")
 		hs.alert.show("Applied layout: office")
