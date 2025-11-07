@@ -9,6 +9,7 @@ spoon.SpoonInstall:andUse("AppLauncher", {
 		b = "Beekeeper Studio",
 		d = "Docker Desktop",
 		e = "Self-Service",
+		f = "FireFox",
 		g = "ChatGPT",
 		h = "Whatsapp",
 		k = "Slack",
