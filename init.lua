@@ -73,7 +73,7 @@ spoon.SpoonInstall:andUse("ArrangeDesktop", {
 
 -- 💡 Add hotkeys to switch layouts AFTER ArrangeDesktop is initialized
 hs.hotkey.bind({ "ctrl", "alt" }, "1", function()
-	hs.execute('automator "/Users/sharmamu/Desktop/workflow.app"')
+	hs.execute('automator "/Users/sharmamu/Documents/scripts/workflow.app"')
 	if spoon.ArrangeDesktop and spoon.ArrangeDesktop.arrangements and spoon.ArrangeDesktop.arrangements["office"] then
 		spoon.ArrangeDesktop:arrange("office")
 		hs.alert.show("Applied layout: office")
