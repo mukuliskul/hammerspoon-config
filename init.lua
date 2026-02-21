@@ -2,16 +2,38 @@
 
 hs.loadSpoon("SpoonInstall")
 
--- Install AppLauncher
-spoon.SpoonInstall:andUse("AppLauncher", {
-	hotkeys = {
-		a = "Anki",
+-- Detect current mode based on WiFi network or VPN connection
+local function getMode()
+	local wifi = hs.wifi.currentNetwork()
+	-- Add your work WiFi network names here
+	local workSSIDs = {
+		["MPAC-LAN"] = true,
+		["YourWorkWiFi2"] = true,
+	}
+
+	if wifi and workSSIDs[wifi] then
+		return "work"
+	end
+
+	local vpn = hs.execute("scutil --nc list | grep -c Connected")
+	if vpn and tonumber(vpn) > 0 then
+		return "work"
+	end
+
+	return "personal"
+end
+
+-- Get initial mode on startup
+local currentMode = getMode()
+hs.alert.show("Mode: " .. currentMode, 2)
+
+-- App launcher configuration for each mode
+local appLauncherConfig = {
+	work = {
 		b = "Beekeeper Studio",
 		d = "Docker Desktop",
 		e = "Self-Service",
-		f = "FireFox",
 		g = "ChatGPT",
-		h = "Whatsapp",
 		k = "Slack",
 		l = "Linear",
 		n = "Obsidian",
@@ -23,33 +45,22 @@ spoon.SpoonInstall:andUse("AppLauncher", {
 		w = "WezTerm",
 		x = "Google Chrome",
 	},
+	personal = {
+		d = "Docker Desktop",
+		g = "ChatGPT",
+		h = "Whatsapp",
+		k = "Slack",
+		n = "Obsidian",
+		s = "Spotify",
+		w = "WezTerm",
+		x = "Google Chrome",
+	},
+}
+
+spoon.SpoonInstall:andUse("AppLauncher", {
+	hotkeys = appLauncherConfig[currentMode],
 })
 
--- Install WindowHalfsAndThirds
--- spoon.SpoonInstall:andUse("WindowHalfsAndThirds", {
--- 	hotkeys = {
--- 		left_half = { { "ctrl", "cmd" }, "Left" },
--- 		right_half = { { "ctrl", "cmd" }, "Right" },
--- 		top_half = { { "ctrl", "cmd" }, "Up" },
--- 		bottom_half = { { "ctrl", "cmd" }, "Down" },
--- 		third_left = { { "ctrl", "alt" }, "Left" },
--- 		third_right = { { "ctrl", "alt" }, "Right" },
--- 		third_up = { { "ctrl", "alt" }, "Up" },
--- 		third_down = { { "ctrl", "alt" }, "Down" },
--- 		top_left = { { "ctrl", "cmd" }, "1" },
--- 		top_right = { { "ctrl", "cmd" }, "2" },
--- 		bottom_left = { { "ctrl", "cmd" }, "3" },
--- 		bottom_right = { { "ctrl", "cmd" }, "4" },
--- 		max_toggle = { { "ctrl", "alt", "cmd" }, "f" },
--- 		max = { { "ctrl", "alt", "cmd" }, "Up" },
--- 		undo = { { "alt", "cmd" }, "z" },
--- 		center = { { "alt", "cmd" }, "c" },
--- 		larger = { { "alt", "cmd", "shift" }, "Right" },
--- 		smaller = { { "alt", "cmd", "shift" }, "Left" },
--- 	},
--- })
-
--- Install ClipboardTool
 spoon.SpoonInstall:andUse("ClipboardTool", {
 	start = true,
 	config = {
@@ -72,6 +83,7 @@ spoon.SpoonInstall:andUse("ArrangeDesktop", {
 })
 
 -- 💡 Add hotkeys to switch layouts AFTER ArrangeDesktop is initialized
+-- Ctrl+Alt+1: Work layout (office)
 hs.hotkey.bind({ "ctrl", "alt" }, "1", function()
 	hs.execute('automator "/Users/sharmamu/Documents/scripts/workflow.app"')
 	if spoon.ArrangeDesktop and spoon.ArrangeDesktop.arrangements and spoon.ArrangeDesktop.arrangements["office"] then
@@ -82,6 +94,7 @@ hs.hotkey.bind({ "ctrl", "alt" }, "1", function()
 	end
 end)
 
+-- Ctrl+Alt+2: Personal/Home layout
 hs.hotkey.bind({ "ctrl", "alt" }, "2", function()
 	hs.execute('automator "/Users/mukul/Desktop/workflow.app"')
 	if
@@ -95,3 +108,17 @@ hs.hotkey.bind({ "ctrl", "alt" }, "2", function()
 		hs.alert.show("Arrangement 'home-work' not found")
 	end
 end)
+
+-- Check for mode changes every 5 minutes and reload app launcher if needed
+-- local lastMode = currentMode
+-- hs.timer.doEvery(300, function()
+-- 	local newMode = getMode()
+-- 	if newMode ~= lastMode then
+-- 		lastMode = newMode
+-- 		hs.alert.show("Mode changed to: " .. newMode, 2)
+--
+-- 		spoon.SpoonInstall:andUse("AppLauncher", {
+-- 			hotkeys = appLauncherConfig[newMode],
+-- 		})
+-- 	end
+-- end)
