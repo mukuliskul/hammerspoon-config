@@ -18,7 +18,6 @@ spoon.SpoonInstall:andUse("AppLauncher", {
 		m = "Notion",
 		o = "Microsoft Outlook",
 		p = "Bruno",
-    q = "OpenCode",
 		s = "Spotify",
 		t = "Microsoft Teams",
 		w = "WezTerm",
